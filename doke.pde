@@ -144,13 +144,12 @@ class S{
   // movemos las letras en 'x' y en 'y'
   void move(){
     
-    // la posicion vertical de cada letra del scroll 
-    ang = ang+0.05;
+    ang += 0.05;
     p = ang;
     for(int i=0;i<yp.length;i++){
       // esto despues se suma (o resta cuando da negativo) a Y, entonces el efecto sinusoidal
       yp[i] = sin(p)*(ts*2);
-      p = p + angs;
+      p += angs;
     }
         
     // la posicion horizontal del scroll
