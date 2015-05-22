@@ -109,26 +109,23 @@ void draw() {
 
 
 class S{
-  String str; // text to sin
   float x;
   float y;
-  boolean yd = true; // y dir
   float ys = 0.05; // y step
   float ang = 0.0; // angle
   float angs = 0.125; // angle step
-  char[] letters; // letters
+  char[] letters; //  text to sin
   float[] yp; // letter y pos
   float p; // pos
   int ts; // typography size
   
   // iniciamos la clase
   S(String sstr, float xx, float yy, int tts){
-    str = sstr;
     x = xx;
     y = yy;
     ts = tts;
     
-    letters = str.toCharArray(); // "hola" -> ['h','o','l','a'];
+    letters = sstr.toCharArray(); // "hola" -> ['h','o','l','a'];
     yp = new float[letters.length];
   }
   
@@ -144,7 +141,7 @@ class S{
   // movemos las letras en 'x' y en 'y'
   void move(){
     
-    ang += 0.05;
+    ang += ys;
     p = ang;
     for(int i=0;i<yp.length;i++){
       // esto despues se suma (o resta cuando da negativo) a Y, entonces el efecto sinusoidal
